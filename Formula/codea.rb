@@ -1,20 +1,20 @@
 class Codea < Formula
   desc "CLI for working with Codea runtimes over MCP"
   homepage "https://github.com/twolivesleft/codea-cli"
-  version "0.1.2"
+  version "0.1.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/twolivesleft/codea-cli/releases/download/v0.1.2/codea-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "cfb5b1e836b83569c1ec5c0e655755465490ce814ddcb987b2f90f2939227c34"
+      url "https://github.com/twolivesleft/codea-cli/releases/download/v0.1.3/codea-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "22433131c60eaac85dfd00d50148d43ff10871c0f0dbe54dbc7bb180344363ce"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/twolivesleft/codea-cli/releases/download/v0.1.2/codea-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "fbb25329d1571c07b0e3783f0a1cb4b8ec41ec109321ed6365cb1038133f4135"
+      url "https://github.com/twolivesleft/codea-cli/releases/download/v0.1.3/codea-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "c8a90677525e38ae79dd7610994bd4e67c058742ee1d826dbd43f3b8bb96b007"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/twolivesleft/codea-cli/releases/download/v0.1.2/codea-cli-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "dafcd90c1f8afd53928b1a26628ffcbb1b4aac60d99f1d4326d847951a13dc85"
+    url "https://github.com/twolivesleft/codea-cli/releases/download/v0.1.3/codea-cli-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "a46d8572a80f8dfa4c251825e7dccf19e7f3dbc5ad2eaf1806ca27778f563309"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
