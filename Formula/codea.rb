@@ -1,20 +1,20 @@
 class Codea < Formula
   desc "CLI for working with Codea runtimes over MCP"
   homepage "https://github.com/twolivesleft/codea-cli"
-  version "0.1.6"
+  version "0.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/twolivesleft/codea-cli/releases/download/v0.1.6/codea-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "db010dd9686a96dc70cf62f4ccf7f81d00ae17ae688d4d7ad05070ecaf4456be"
+      url "https://github.com/twolivesleft/codea-cli/releases/download/v0.2.0/codea-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "8b8e278b0a9bde0449dcf54b8c117c3587147ec35c7380fe9dde1d52c088daeb"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/twolivesleft/codea-cli/releases/download/v0.1.6/codea-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "a55c9960904516108c8099425df4cb88db9f47a0a3e36442e62bf9715cae47d3"
+      url "https://github.com/twolivesleft/codea-cli/releases/download/v0.2.0/codea-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "9dfba1c0907bff83dac9fd490d8d17a516c17fd426c2ae57c097effe005d5247"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/twolivesleft/codea-cli/releases/download/v0.1.6/codea-cli-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "7e1d9aefe8d4b68fcf17b6214d9f257606ec50b51e8fb35fb2e26cb3dadb2f48"
+    url "https://github.com/twolivesleft/codea-cli/releases/download/v0.2.0/codea-cli-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "035dd9048976f27dfeaa15418c0a940ac35201b6d121970cb648917d5e1cda2f"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
@@ -41,9 +41,15 @@ class Codea < Formula
   end
 
   def install
-    bin.install "codea" if OS.mac? && Hardware::CPU.arm?
-    bin.install "codea" if OS.mac? && Hardware::CPU.intel?
-    bin.install "codea" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "codea"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "codea"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "codea"
+    end
 
     install_binary_aliases!
 
